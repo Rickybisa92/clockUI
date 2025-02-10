@@ -8,7 +8,7 @@ export default class Clock extends HTMLElement {
       const time = this.querySelector("time");
       const date = new Date();
       time.dateTime = date.toISOString();
-      time.textContent = date.toISOString().slice(11, 19);
+      time.textContent = date.toLocaleTimeString("es-ES");
     };
   }
 
