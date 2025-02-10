@@ -92,9 +92,9 @@ main>section:not(:target) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Jersey 10", serif;
+  font-family: "Press Start 2P", serif;
   color: rgb(255, 136, 0);
-  font-size: 9rem;
+  font-size: 4rem;
 }
 
 .controls {
