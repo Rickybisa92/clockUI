@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001bhtml)",
   "scripts": {
-    "build": "npx parcel build src/index.html",
-    "start": "npx parcel src/index.html",
+    "build": "npx parcel build clockui/src/index.html",
+    "start": "npx parcel clockui/src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "RicardoBisañez",
