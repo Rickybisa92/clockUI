@@ -8,20 +8,24 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <script src="https://kit.fontawesome.com/dffea5817d.js" crossorigin="anonymous"></script>
+    <link href="https://db.onlinewebfonts.com/c/4a7d9dc16cce827cbe527efa5724fbab?family=LED" rel="stylesheet" type="text/css"/>
   </head>
   <body>
     <nav class="navbar">
       <ul>
-        <li><a href="#clock">Clock</a></li>
-        <li><a href="#alarm">Alarm</a></li>
-        <li><a href="#stopwatch">Stopwatch</a></li>
-        <li><a href="#timer">Timer</a></li>
+        <li><a href="#clock"><i class="fa-solid fa-clock"></i> Clock</a></li>
+        <li><a href="#alarm"><i class="fa-solid fa-bell"></i> Alarm</a></li>
+        <li><a href="#stopwatch"><i class="fa-solid fa-stopwatch-20"></i> Stopwatch</a></li>
+        <li><a href="#timer"><i class="fa-solid fa-hourglass-end"></i> Timer</a></li>
       </ul>
     </nav>
     <main>
       <section id="clock">
         <x-clock>
+          <div class="container-clock">
           <time class="clock-time">00:00:00</time>
+        </div>
         </x-clock>
       </section>
       <section id="alarm">
