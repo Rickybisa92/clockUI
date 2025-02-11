@@ -7,13 +7,14 @@ export default class Timer extends HTMLElement {
     this.addEventListener("click", this);
     this.#intervalCallback = () => {
       const time = this.querySelector("time");
-      const inputs = this.querySelectorAll("input");
+      const inputs = this.querySelectorAll("input[type='time']");
       const intervals = Array.from(inputs, ({ value }) =>
         new Date(`1970-01-01T${value}Z`).getTime(),
       );
       const total = intervals.reduce((a, b) => a + b, 0);
       let ms;
       let remaining = new Date(new Date() - new Date(this.startTime)).getTime();
+
       if (remaining < total || this.loop) {
         remaining %= total;
         let i = 0;
@@ -38,7 +39,25 @@ export default class Timer extends HTMLElement {
       time.dateTime = `PT${ms / 1000}S`;
       time.textContent = new Date(ms).toISOString().slice(11, 22);
     };
-  }
+
+    // === NUEVO: Esperar hasta que el componente esté completamente montado ===
+    setTimeout(() => {
+      const toggleSwitch = this.querySelector("#toggleSwitch2");
+      if (toggleSwitch) {
+          toggleSwitch.addEventListener("change", (event) => {
+              if (event.target.checked) {
+                  console.log("Temporizador iniciado"); // Depuración
+                  this.start(); 
+              } else {
+                  console.log("Temporizador pausado"); // Depuración
+                  this.pause();
+              }
+          });
+      } else {
+          console.error("No se encontró el switch dentro del componente");
+      }
+  }, 0);
+}
 
   static get observedAttributes() {
     return ["paused", "start-time"];

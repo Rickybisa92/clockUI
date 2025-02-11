@@ -12,6 +12,12 @@ body {
   background-color: #0e1011;
 }
 
+body.light-mode {
+  background-color: #f5ebe0;
+}
+
+
+
 nav>ul {
   display: flex;
   flex-wrap: wrap;
@@ -29,11 +35,21 @@ nav>ul>li {
 
 }
 
+body.light-mode .navbar {
+  background-color: #e3d5ca;
+  padding: 5px 10px;
+}
+
+
 .navbar ul li a {
   color: rgb(255, 136, 0);
   text-decoration: none;
   font-size: 2rem;
   font-family: "Jersey 10", serif;
+}
+
+body.light-mode .navbar ul li a {
+  color: #d69a5f;
 }
 
 .fa-solid {
@@ -59,6 +75,10 @@ main>section:not(:target) {
   font-size: 9rem;
 }
 
+body.light-mode .clock-time {
+  color: #d69a5f;
+}
+
 .container-clock {
   height: 150px;
   width: 500px;
@@ -70,14 +90,23 @@ main>section:not(:target) {
   box-shadow: 0 0 20px 5px rgba(225, 132, 10, 0.5);
 }
 
+body.light-mode .container-clock {
+  border: 3px solid #d69a5f;
+  box-shadow: 0 0 20px 5px rgba(214, 154, 95, 0.5);
+}
+
 .timer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Press Start 2P', serif;
   color: rgb(255, 136, 0);
   font-size: 3rem;
+}
+
+body.light-mode .timer {
+  color: #d69a5f;
 }
 
 .alarms {
@@ -94,7 +123,11 @@ main>section:not(:target) {
   align-items: center;
   font-family: "Press Start 2P", serif;
   color: rgb(255, 136, 0);
-  font-size: 4rem;
+  font-size: 3rem;
+}
+
+body.light-mode .stopwatch {
+  color: #d69a5f;
 }
 
 .controls {
@@ -105,19 +138,56 @@ main>section:not(:target) {
   gap: 16px;
 }
 
+input {
+  background-color: #221b1b;
+  border: 2px solid #ff9100;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 16px;
+  color: #f7890c;
+}
+
+
+
+input:focus {
+  border-color: #e48e54;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+
 .restart {
   background-color: rgb(255, 136, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: black;
   padding: 5px 20px;
   border: none;
   border-radius: 20px;
-  font-size: 1rem;
-  font-family: "Jersey 10", serif;
   cursor: pointer;
 }
+
+body.light-mode .restart {
+  background-color: #d69a5f;
+}
+
+.loop {
+    background-color: rgb(255, 136, 0);
+    color: black;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .delete {
+   
+      background-color: rgb(129, 129, 129);
+      color: rgb(0, 0, 0);
+      padding: 5px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+
 
 .alarm {
   display: flex;
@@ -163,6 +233,10 @@ main>section:not(:target) {
     transition: .4s;
     border-radius: 30px;
 }
+
+body.light-mode .slider {
+    background-color: #d95050;
+}
 .slider:before {
     position: absolute;
     content: "timer";
@@ -175,6 +249,10 @@ main>section:not(:target) {
 }
 input:checked + .slider {
     background-color: green;
+}
+
+body.light-mode input:checked + .slider {
+    background-color: #4ab64a;
 }
 input:checked + .slider:before {
     content: "timer_off";

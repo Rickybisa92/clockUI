@@ -1,0 +1,23 @@
+.theme-toggle {
+  position: absolute;
+  top: 80px;  /* Ajusta según el tamaño de tu navbar */
+  right: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.theme-toggle input {
+  display: none; /* Escondemos el input, solo usamos el label */
+}
+
+.theme-toggle label {
+  font-size: 2rem;
+  
+
+  
+  transition: all 0.3s;
+}
+
+
+
