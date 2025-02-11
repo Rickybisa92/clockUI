@@ -48,7 +48,9 @@
               </section>
             </section>
           </template>
+          <div class="alarms-container">
           <section class="items"></section>
+          </div>
           <section class="controls">
             <button class="add material-icons">add_alarm</button>
           </section>
@@ -68,11 +70,13 @@
       </section>
       <section id="timer">
         <x-timer class="timer">
+          <div class="container-timer">
           <time datetime="PT0S">00:00:00.00</time>
           <section class="items">
             <input type="time" min="00:00" max="23:59" step="1" value="00:03" />
             <input type="time" min="00:00" max="23:59" step="1" value="00:01" />
           </section>
+        </div>
           <section class="controls">
             <label class="switch">
                 <input type="checkbox" id="toggleSwitch2">
