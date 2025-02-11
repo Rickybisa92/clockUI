@@ -86,6 +86,10 @@ body.light-mode .loop {
   background-color: #d69a5f;
 }
 
+body.light-mode .no-loop {
+  background-color: #d69a5f;
+}
+
 
 body.light-mode .add {
   background-color: #d69a5f;
