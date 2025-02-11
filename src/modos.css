@@ -104,3 +104,8 @@ body.light-mode .container-timer {
   border: 3px solid #d69a5f;
   box-shadow: 0 0 20px 5px rgba(214, 154, 95, 0.5);
 }
+
+body.light-mode .container-stopwatch {
+  border: 3px solid #d69a5f;
+  box-shadow: 0 0 20px 5px rgba(214, 154, 95, 0.5);
+}
