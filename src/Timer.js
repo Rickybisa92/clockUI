@@ -43,6 +43,7 @@ export default class Timer extends HTMLElement {
     // === NUEVO: Esperar hasta que el componente esté completamente montado ===
     setTimeout(() => {
       const toggleSwitch = this.querySelector("#toggleSwitch2");
+      const slider = this.querySelector(".slider");
       if (toggleSwitch) {
           toggleSwitch.addEventListener("change", (event) => {
               if (event.target.checked) {
@@ -53,6 +54,19 @@ export default class Timer extends HTMLElement {
                   this.pause();
               }
           });
+          
+          // Detectar Enter o Espacio en el slider para cambiar el estado del switch
+          if (slider) {
+            slider.setAttribute("tabindex", "0");
+      
+            slider.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                toggleSwitch.checked = !toggleSwitch.checked;
+                toggleSwitch.dispatchEvent(new Event("change", { bubbles: true }));
+              }
+            });
+          }
       } else {
           console.error("No se encontró el switch dentro del componente");
       }
