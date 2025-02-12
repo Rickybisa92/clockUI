@@ -81,3 +81,20 @@ function playAlarmSound() {
 setInterval(checkAlarms, 1000);
 
 
+// Encuentra el menú y los enlaces
+const menu = document.querySelector('.navbar ul');
+const menuLinks = document.querySelectorAll('.navbar ul li a');
+const menuIcon = document.querySelector('.menu-icon');
+
+// Abre o cierra el menú hamburguesa al hacer clic en el icono
+menuIcon.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+// Cierra el menú cuando se hace clic en un enlace
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+});
+

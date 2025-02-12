@@ -12,10 +12,6 @@ body {
   background-color: #0e1011;
 }
 
-
-
-
-
 nav>ul {
   display: flex;
   flex-wrap: wrap;
@@ -303,4 +299,16 @@ input:checked + .slider {
 input:checked + .slider:before {
     content: "timer_off";
     transform: translateX(30px);
+}
+
+.menu-icon {
+  display: none; /* Ocultamos el icono en pantallas grandes */
+  font-size: 30px;
+  color: #d69a5f;
+  cursor: pointer;
+}
+
+.logo {
+  color: #d69a5f;
+  display: none; /* Ocultamos el logo en pantallas grandes */
 }

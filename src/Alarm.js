@@ -100,11 +100,13 @@ export default class Alarm extends HTMLElement {
   }
 
   showNotification(title, message) {
-    // Verifica si las notificaciones están permitidas
+    // Verificar si las notificaciones están permitidas
     if (Notification.permission === "granted") {
       new Notification(title, { body: message });
+      console.log("🔔 Notificación mostrada: ", title, message); // Confirmar en consola que la notificación se muestra
     } else {
-      alert("Notificación bloqueada o no permitida."); // Alternativa si las notificaciones están bloqueadas
+      console.log("🔔 Las notificaciones están bloqueadas o no permitidas.");
+      alert("No tienes permisos para recibir notificaciones.");
     }
   }
 
