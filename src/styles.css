@@ -98,6 +98,28 @@ main>section:not(:target) {
   background-color: #616161;
 }
 
+.start.active {
+  background-color: green;
+  color: white;
+}
+
+.start {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.pause {
+  background-color: rgb(211, 48, 48);
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
 
 .items .alarms {
@@ -140,14 +162,6 @@ main>section:not(:target) {
   box-shadow: 0 0 20px 5px rgba(225, 132, 10, 0.5);
 }
 
-
-
-.alarms {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .stopwatch {
   display: flex;

@@ -40,3 +40,44 @@ themeToggle.addEventListener("change", () => {
 });
 
 
+
+// Solicita permiso para enviar notificaciones cuando se carga la página
+document.addEventListener("DOMContentLoaded", () => {
+  if (Notification.permission !== "granted") {
+    Notification.requestPermission();
+  }
+});
+
+// Función para comprobar la alarma
+function checkAlarms() {
+  const alarms = document.querySelectorAll(".alarms input[type='time']");
+  const now = new Date();
+  const currentTime = now.toTimeString().slice(0, 5); // Formato HH:MM
+
+  alarms.forEach((alarm) => {
+    if (alarm.value === currentTime) {
+      showNotification("¡Alarma activada!", "Es hora de tu alarma 🎶");
+      playAlarmSound();
+    }
+  });
+}
+
+// Función para mostrar una notificación
+function showNotification(title, message) {
+  if (Notification.permission === "granted") {
+    new Notification(title, { body: message });
+  } else {
+    alert(message); // Como alternativa si las notificaciones están bloqueadas
+  }
+}
+
+// Función para reproducir sonido
+function playAlarmSound() {
+  const alarmSound = new Audio("alarm.mp3"); // Asegúrate de tener un archivo de sonido
+  alarmSound.play();
+}
+
+// Revisar alarmas cada segundo
+setInterval(checkAlarms, 1000);
+
+
