@@ -12,16 +12,36 @@ export default class Stopwatch extends HTMLElement {
       time.textContent = new Date(ms).toISOString().slice(11, 22);
     };
     
-    // Agregar listener para el checkbox
-    this.addEventListener("change", (event) => {
-      if (event.target.id === "toggleSwitch") {
-        if (event.target.checked) {
-          this.start(); // Iniciar el cronómetro
-        } else {
-          this.pause(); // Pausar el cronómetro
+    // Esperar a que el DOM cargue antes de agregar eventos
+    setTimeout(() => {
+      const toggleSwitch = this.querySelector("#toggleSwitch");
+      const slider = this.querySelector(".slider");
+      
+      if (toggleSwitch) {
+        toggleSwitch.addEventListener("change", (event) => {
+          if (event.target.checked) {
+            console.log("Cronómetro iniciado"); // Depuración
+            this.start();
+          } else {
+            console.log("Cronómetro pausado"); // Depuración
+            this.pause();
+          }
+        });
+
+        // Habilitar accesibilidad con teclado en el slider
+        if (slider) {
+          slider.setAttribute("tabindex", "0");
+
+          slider.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              toggleSwitch.checked = !toggleSwitch.checked;
+              toggleSwitch.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+          });
         }
       }
-    });
+    }, 0);
   }
   
   static get observedAttributes() {
