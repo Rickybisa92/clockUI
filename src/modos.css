@@ -113,3 +113,47 @@ body.light-mode .container-stopwatch {
   border: 3px solid #d69a5f;
   box-shadow: 0 0 20px 5px rgba(214, 154, 95, 0.5);
 }
+
+body.light-mode .menu-icon {
+  display: none; /* Ocultamos el icono en pantallas grandes */
+  font-size: 30px;
+  color: #d69a5f;
+  cursor: pointer;
+}
+
+body.light-mode .logo {
+  color: #d69a5f;
+  display: none; /* Ocultamos el logo en pantallas grandes */
+}
+
+
+@media (max-width: 768px) {
+
+  body.light-mode .navbar ul li a {
+    color: #d69a5f;
+  }
+
+  body.light-mode .menu-icon {
+    display: block; /* Mostramos el icono en pantallas pequeñas */
+    font-size: 30px;
+    color: #d69a5f;
+    cursor: pointer;
+  }
+
+  body.light-mode .logo {
+    display: block; /* Mostramos el logo en pantallas pequeñas */
+    color: #d69a5f;
+  }
+
+  body.light-mode .theme-toggle input {
+    display: none; /* Escondemos el input, solo usamos el label */
+  }
+
+  body.light-mode .navbar ul {
+    background-color: #e3d5ca;
+  }
+
+  body.light-mode .navbar ul.active {
+    display: flex;
+  }
+}

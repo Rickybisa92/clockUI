@@ -87,7 +87,7 @@
         position: absolute;
         top: 60px;
         left: 0;
-        background-color: #e3d5ca;
+        background-color: rgb(36, 36, 36);
         padding: 10px 0;
       }
     
@@ -97,6 +97,7 @@
       }
 
       .logo {
+        font-weight: 200;
         display: block;
       }
     
@@ -108,5 +109,7 @@
         display: flex;
       }
     
+      
+
 
 }

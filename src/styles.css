@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Pacifico&family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
 
+:root {
+  /* Colores principales */
+  --color-primary: #ff8800; /* Naranja brillante */
+  --color-secondary: #616161; /* Gris oscuro */
+  --color-background: #0e1011; /* Fondo oscuro */
+  --color-navbar-bg: rgb(36, 36, 36); /* Nuevo color de fondo para el navbar */
+  --color-box-shadow: rgba(225, 132, 10, 0.5); /* Sombra de los elementos */
 
+  /* Colores de los botones */
+  --color-button-hover: #e48e54; /* Naranja más claro al hover */
+  --color-button-pause: #d33030; /* Rojo */
+  --color-button-start: green; /* Verde */
+}
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
   height: 100vh;
-  background-color: #0e1011;
+  background-color: var(--color-background);
 }
 
 nav>ul {
@@ -24,13 +35,13 @@ nav>ul>li {
 }
 
 .navbar {
-  background-color: black;
+  background-color: var(--color-navbar-bg);
   padding: 5px 10px;
 }
 
 
 .navbar ul li a {
-  color: rgb(255, 136, 0);
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 2rem;
   font-family: "Jersey 10", serif;
@@ -54,7 +65,7 @@ main>section:not(:target) {
 
 .clock-time {
   font-weight: 300;
-  color: rgb(255, 136, 0);
+  color: var(--color-primary);
   font-family: "Jersey 10", serif;
   font-size: 9rem;
 }
@@ -64,22 +75,22 @@ main>section:not(:target) {
   height: 150px;
   width: 500px;
   border-radius: 20px;
-  border: 3px solid rgb(255, 136, 0);
+  border: 3px solid var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px 5px rgba(225, 132, 10, 0.5);
+  box-shadow: 0 0 20px 5px var(--color-box-shadow);
 }
 
 .container-stopwatch {
   height: 150px;
   width: 700px;
   border-radius: 20px;
-  border: 3px solid rgb(255, 136, 0);
+  border: 3px solid var(--color-primary);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px 5px rgba(225, 132, 10, 0.5);
+  box-shadow: 0 0 20px 5px var(--color-box-shadow);
 }
 
 
@@ -91,11 +102,11 @@ main>section:not(:target) {
   padding: 10px;
   margin-top: 10px;
   border-radius: 8px;
-  background-color: #616161;
+  background-color: var(--color-secondary);
 }
 
 .start.active {
-  background-color: green;
+  background-color: var(--color-button-start);
   color: white;
 }
 
@@ -109,7 +120,7 @@ main>section:not(:target) {
 }
 
 .pause {
-  background-color: rgb(211, 48, 48);
+  background-color: var(--color-button-pause);
   color: white;
   padding: 5px 20px;
   border: none;
@@ -150,12 +161,12 @@ main>section:not(:target) {
   height: 150px;
   width: 700px;
   border-radius: 20px;
-  border: 3px solid rgb(255, 136, 0);
+  border: 3px solid var(--color-primary);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 20px 5px rgba(225, 132, 10, 0.5);
+  box-shadow: 0 0 20px 5px var(--color-box-shadow);
 }
 
 
@@ -183,23 +194,23 @@ main>section:not(:target) {
 
 input {
   background-color: #221b1b;
-  border: 2px solid #ff9100;
+  border: 2px solid var(--color-primary);
   border-radius: 5px;
   padding: 8px;
   font-size: 16px;
-  color: #f7890c;
+  color: var(--color-primary);
 }
 
 
 
 input:focus {
-  border-color: #e48e54;
+  border-color: var(--color-border-focus);
   box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
 }
 
 
 .restart {
-  background-color: rgb(255, 136, 0);
+  background-color: var(--color-primary);
   color: black;
   padding: 5px 20px;
   border: none;
@@ -209,7 +220,7 @@ input:focus {
 
 
 .loop {
-    background-color: rgb(255, 136, 0);
+    background-color: var(--color-primary);
     color: black;
     padding: 5px 20px;
     border: none;
@@ -218,7 +229,7 @@ input:focus {
   }
 
   .no-loop {
-    background-color: rgb(255, 136, 0);
+    background-color: var(--color-primary);
     color: rgb(0, 0, 0);
     padding: 5px 20px;
     border: none;
@@ -246,7 +257,7 @@ input:focus {
 }
 
 .add {
-  background-color: rgb(255, 136, 0);
+  background-color: var(--color-primary);
   color: black;
   padding: 5px 20px;
   border: none;
@@ -279,9 +290,6 @@ input:focus {
     border-radius: 30px;
 }
 
-body.light-mode .slider {
-    background-color: #d95050;
-}
 .slider:before {
     position: absolute;
     content: "timer";
@@ -304,11 +312,13 @@ input:checked + .slider:before {
 .menu-icon {
   display: none; /* Ocultamos el icono en pantallas grandes */
   font-size: 30px;
-  color: #d69a5f;
+  font-weight: 900;
+  color: var(--color-primary);
   cursor: pointer;
 }
 
 .logo {
-  color: #d69a5f;
+  color: var(--color-primary);
+  font-family: 'Press Start 2P' , serif;
   display: none; /* Ocultamos el logo en pantallas grandes */
 }
