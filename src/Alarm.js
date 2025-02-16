@@ -71,33 +71,36 @@ export default class Alarm extends HTMLElement {
     const { classList } = target;
 
     if (classList.contains("add")) {
-      this.add();
+        this.add();
     } else if (classList.contains("delete")) {
-      this.delete(this.alarms.find((alarm) => alarm.contains(target)));
-    } else if (classList.contains("pause")) {
-      this.pause(this.alarms.find((alarm) => alarm.contains(target)));
-    } else if (classList.contains("start")) {
-      this.start(this.alarms.find((alarm) => alarm.contains(target)));
+        this.delete(this.alarms.find((alarm) => alarm.contains(target)));
+    } else if (classList.contains("alarm-toggle")) {
+        const alarm = this.alarms.find((a) => a.contains(target));
+        if (target.checked) {
+            this.start(alarm);
+        } else {
+            this.pause(alarm);
+        }
     }
-  }
+}
 
   start(alarm) {
     if (this.alarms.includes(alarm)) {
-      alarm.setAttribute("active", ""); // Activar alarma
-      alarm.querySelector(".start").classList.add("active"); // Cambia el botón visualmente
-
-      alert("⏰ Alarma activada"); // Muestra la alerta cuando se activa
+        alarm.setAttribute("active", ""); // Activar alarma
+        alarm.querySelector(".alarm-toggle").checked = true; // Mantener el switch en on
+        console.log("⏰ Alarma activada");
     }
-  }
+}
 
-  pause(alarm) {
-    if (this.alarms.includes(alarm)) {
+pause(alarm) {
+  if (this.alarms.includes(alarm)) {
       alarm.removeAttribute("active"); // Desactivar alarma
       alarm.removeAttribute("ringing"); // Si estaba sonando, dejar de sonar
-      alarm.querySelector(".start").classList.remove("active"); // Reset botón
+      alarm.querySelector(".alarm-toggle").checked = false; // Mantener el switch en off
       this.stopAlarmSound(); // Detener el sonido de la alarma
-    }
+      console.log("🚫 Alarma desactivada");
   }
+}
 
   showNotification(title, message) {
     // Verificar si las notificaciones están permitidas

@@ -45,9 +45,11 @@
           <template>
             <section class="alarms">
               <input type="time" min="00:00" max="23:59" step="1" />
+              <label class="switch">
+                <input type="checkbox" class="alarm-toggle">
+                <span class="slider"></span>
+            </label>
               <section class="controls">
-                <button class="start material-icons">alarm_on</button>
-                <button class="pause material-icons">alarm_off</button>
                 <button class="delete material-icons">delete</button>
               </section>
             </section>
