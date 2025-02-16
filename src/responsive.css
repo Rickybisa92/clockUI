@@ -1,8 +1,6 @@
 @media (max-width: 768px) {
 
     /* Ajusta la navbar */
-   
-
 
     .clock-time {
         font-weight: 200;
@@ -96,13 +94,28 @@
         text-align: center;
       }
 
+      .modo-movil {
+        display: flex;
+        flex-direction:row;
+        align-items: center;
+        
+        
+      }
+
       .logo {
         font-weight: 200;
         display: block;
+        margin-top: 5px;
+      }
+
+      .logo-reloj {
+        width: 25px;
+        margin-left: 5px;
       }
     
       .menu-icon {
         display: block;
+        margin: 10px;
       }
     
       .navbar ul.active {

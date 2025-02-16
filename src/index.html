@@ -16,18 +16,20 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo">Mi Sitio</div>
-  <div class="menu-icon" id="menu-icon">&#9776;</div> <!-- Icono de la hamburguesa -->
+      <div class="modo-movil">
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+      <div class="logo">ClockUI</div> <img src="reloj-de-pared.png" class="logo-reloj" alt="logo reloj" aria-label="logo reloj">
+</div> <!-- Icono de la hamburguesa -->
       <ul>
-        <li><a href="#clock"><i class="fa-solid fa-clock"></i> Clock</a></li>
-        <li><a href="#alarm"><i class="fa-solid fa-bell"></i> Alarm</a></li>
-        <li><a href="#stopwatch"><i class="fa-solid fa-stopwatch-20"></i> Stopwatch</a></li>
-        <li><a href="#timer"><i class="fa-solid fa-hourglass-end"></i> Timer</a></li>
+        <li><a href="#clock" aria-label="clock"><i class="fa-solid fa-clock"></i> Clock</a></li>
+        <li><a href="#alarm" aria-label="alarm"><i class="fa-solid fa-bell"></i> Alarm</a></li>
+        <li><a href="#stopwatch" aria-label="stopwatch"><i class="fa-solid fa-stopwatch-20"></i> Stopwatch</a></li>
+        <li><a href="#timer" aria-label="timer"><i class="fa-solid fa-hourglass-end"></i> Timer</a></li>
       </ul>
     </nav>
 
     <div class="theme-toggle">
-      <input type="checkbox" id="themeToggle">
+      <input type="checkbox" id="themeToggle" role="switch" aria-checked="false" aria-label="Activar modo oscuro">
       <label for="themeToggle">🌙</label>
     </div>
     
@@ -46,11 +48,11 @@
             <section class="alarms">
               <input type="time" min="00:00" max="23:59" step="1" />
               <label class="switch">
-                <input type="checkbox" class="alarm-toggle">
+                <input type="checkbox" class="alarm-toggle" role="switch" arial-checked="false">
                 <span class="slider"></span>
             </label>
               <section class="controls">
-                <button class="delete material-icons">delete</button>
+                <button class="delete material-icons" aria-label="eliminar alarma">delete</button>
               </section>
             </section>
           </template>
@@ -58,7 +60,7 @@
           <section class="items"></section>
           </div>
           <section class="controls">
-            <button class="add material-icons">add_alarm</button>
+            <button class="add material-icons" aria-label="agregar alarma">add_alarm</button>
           </section>
         </x-alarm>
       </section>
@@ -69,10 +71,10 @@
         </div>
           <section class="controls">
             <label class="switch">
-                <input type="checkbox" id="toggleSwitch">
+                <input type="checkbox" id="toggleSwitch" role="switch" aria-checked="false">
                 <span class="slider"  tabindex="0" ></span>
             </label>
-            <button class="restart material-icons">restart_alt</button>
+            <button class="restart material-icons" aria-label="reiniciar cronometro">restart_alt</button>
           </section>
         </x-stopwatch>
       </section>
@@ -87,12 +89,12 @@
         </div>
           <section class="controls">
             <label class="switch">
-                <input type="checkbox" id="toggleSwitch2">
+                <input type="checkbox" id="toggleSwitch2" role="switch" aria-checked="false">
                 <span class="slider" tabindex="0"></span>
             </label>
-            <button class="restart material-icons">restart_alt</button>
-            <button class="loop material-icons">loop</button>
-            <button class="no-loop material-icons">sync_disabled</button>
+            <button class="restart material-icons" aria-label="reiniciar temporizador">restart_alt</button>
+            <button class="loop material-icons" aria-label="activar repeticion">loop</button>
+            <button class="no-loop material-icons" aria-label="desactivar repeticion">sync_disabled</button>
           </section>
         </x-timer>
       </section>

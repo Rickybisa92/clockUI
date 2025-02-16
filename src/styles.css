@@ -322,3 +322,7 @@ input:checked + .slider:before {
   font-family: 'Press Start 2P' , serif;
   display: none; /* Ocultamos el logo en pantallas grandes */
 }
+
+.logo-reloj {
+  display: none;
+}
