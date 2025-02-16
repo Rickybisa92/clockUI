@@ -8,6 +8,7 @@ export default class Alarm extends HTMLElement {
     this.addEventListener("click", this);
     this.duration = 60 * 1000;
 
+
     // Solicitar permiso para las notificaciones
     document.addEventListener("DOMContentLoaded", () => {
       if (Notification.permission !== "granted") {
@@ -18,6 +19,8 @@ export default class Alarm extends HTMLElement {
         });
       }
     });
+
+    
 
     this.#intervalCallback = () => {
       const now = new Date();

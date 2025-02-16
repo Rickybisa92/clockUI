@@ -48,11 +48,11 @@
           <template>
             <section class="alarms">
               <input type="time" min="00:00" max="23:59" step="1" />
-              <label class="switch">
-                <input type="checkbox" class="alarm-toggle" role="switch" arial-checked="false">
-                <span class="slider"></span>
-            </label>
               <section class="controls">
+                <label class="switch">
+                  <input type="checkbox" id="toggleSwitch3" role="switch" arial-checked="false">
+                  <span class="slider" tabindex="0"></span>
+              </label>
                 <button class="delete material-icons" aria-label="eliminar alarma">delete</button>
               </section>
             </section>
@@ -73,7 +73,7 @@
           <section class="controls">
             <label class="switch">
                 <input type="checkbox" id="toggleSwitch" role="switch" aria-checked="false">
-                <span class="slider"  tabindex="0" ></span>
+                <span class="slider" tabindex="0" ></span>
             </label>
             <button class="restart material-icons" aria-label="reiniciar cronometro">restart_alt</button>
           </section>
